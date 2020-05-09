@@ -21,13 +21,13 @@ module.exports = function (app) {
         fs.writeFile("db/db.json", JSON.stringify(db))
         res.json(JSON.parse(db))
 
-
     })
 
     app.post("/api/notes/:id", async (req, res) => {
         let db = await getItem()
         db = JSON.parse(db)
-        let editDb = db.splice(db.findIndex(element => element.id !== req.params.id))
+        let editDb = db.reduce((p, c) => (c.id !== req.params.id && p.push(c), p), [])
+        console.log(editDb)
         db.push(editDb)
         fs.writeFile("db/db.json", JSON.stringify(db))
         res.json(JSON.parse(db))
