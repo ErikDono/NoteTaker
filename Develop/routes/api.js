@@ -10,7 +10,7 @@ module.exports = function (app) {
         const items = await getItem()
         // JSON.parse(items)
         res.json(JSON.parse(items))
-        console.log(JSON.parse(items))
+
     });
     app.post("/api/notes", async (req, res) => {
         let db = await getItem()
@@ -28,9 +28,8 @@ module.exports = function (app) {
         db = JSON.parse(db)
         let editDb = db.reduce((p, c) => (c.id !== req.params.id && p.push(c), p), [])
         console.log(editDb)
-        db.push(editDb)
-        fs.writeFile("db/db.json", JSON.stringify(db))
-        res.json(JSON.parse(db))
+        fs.writeFile("db/db.json", JSON.stringify(editDb))
+        res.json(JSON.parse(editDb))
     })
 }
 

@@ -1,1 +1,17 @@
-[{"id":1,"title":"test","text":"test"},{"title":"a","text":"a","id":2},{"title":"a","text":"a","id":3},[{"id":1,"title":"test","text":"test"},{"title":"a","text":"a","id":2},{"title":"a","text":"a","id":3}]]
+[
+    {
+        "id": 1,
+        "title": "test",
+        "text": "test"
+    },
+    {
+        "title": "a",
+        "text": "a",
+        "id": 2
+    },
+    {
+        "title": "a",
+        "text": "a",
+        "id": 3
+    }
+]
