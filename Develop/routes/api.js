@@ -27,7 +27,8 @@ module.exports = function (app) {
     app.post("/api/notes/:id", async (req, res) => {
         let db = await getItem()
         db = JSON.parse(db)
-        db.filter(element => element.id !== req.params.id);
+        let editDb = db.splice(db.findIndex(element => element.id !== req.params.id))
+        db.push(editDb)
         fs.writeFile("db/db.json", JSON.stringify(db))
         res.json(JSON.parse(db))
     })
