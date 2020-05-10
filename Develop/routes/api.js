@@ -19,9 +19,8 @@ module.exports = function (app) {
         req.body.id = db.length + 1
         db.push(newNote)
         fs.writeFile("db/db.json", JSON.stringify(db))
-        let data = res.json(JSON.parse(db))
-        return data
-        // location.reload()
+        res.json(JSON.parse(db))
+        window.location.reload(true)
 
 
     })
