@@ -44,21 +44,7 @@ module.exports = function (app) {
 
     })
 
-    // app.delete("/api/notes/:id", function (req, res) {
-
-    //     // read the file
-    //     let db = await getItem()
-    //     db = JSON.parse(db)
-    //     // delete the object via id
-    //     const editedDb = 
-    //     // push to file
-    //     //write file 
-
-
-    // })
-
-
-    // this will delete the app 
+    // this will delete a text object  
     app.post("/api/notes/:id", async (req, res) => {
         //reads current database
         let db = await getItem()
