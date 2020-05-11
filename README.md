@@ -31,6 +31,11 @@
 ## Node JS and My Thought Process 
 ```
     This note taking webpage application was a very big challenge, and I am happy to have completed it! I strive to make code as clean looking as possible, and this homework gave me the opportunity to do so. I struggled at first, but with the help of my tutor and in class instructors, combined with the skilled eye of Greg the learning assistant, I was able to fix the necessary bits that were causing a bit of a bumpy ride. My code has two routes: one for the main html page, and the other for the notes page. Express was used, which allowed me to get, post, and delete the user’s generated text information. The app is very straightforward, and the code should logically flow with the user’s intent. 
+
+
+    EDIT: 
+
+    Heroku deploy matches github, but will delete the every saved text entry. Please see second local storage video as well. 
 ```
 
 
@@ -38,6 +43,7 @@
 ## Function Video 
 
 ![FunctionVideo](/assets/function.gif)
+![LocalFunctionVideo](/assets/localfunction.gif)
 
 ## Installation
       This  uses Express and Fs, but you should just be able to run NPM Install 
