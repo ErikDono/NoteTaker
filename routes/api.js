@@ -16,6 +16,7 @@ module.exports = function (app) {
         // read the database
         const items = await getItem()
         // 
+        // return res.json(JSON.parse(items))
         res.json(JSON.parse(items))
 
     });
@@ -36,6 +37,7 @@ module.exports = function (app) {
         // makes sure db is current
         console.log({ db })
         // sends the re-written db to the page
+        // return res.send(db)
         res.send(db)
 
 
@@ -57,7 +59,7 @@ module.exports = function (app) {
 
 
     // this will delete the app 
-    app.delete("/api/notes/:id", async (req, res) => {
+    app.post("/api/notes/:id", async (req, res) => {
         //reads current database
         let db = await getItem()
         // makes the array into an object
