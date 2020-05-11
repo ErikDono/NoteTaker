@@ -34,7 +34,7 @@
 
 ## Function Video 
 
-![FunctionVideo](/Assets/function.gif)
+![FunctionVideo](/assets/function.gif)
 
 ## Installation
       This  uses Express and Fs, but you should just be able to run NPM Install 
