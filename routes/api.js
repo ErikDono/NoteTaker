@@ -1,46 +1,78 @@
 const fs = require("fs").promises;
+const crypto = require("crypto")
+
+const id = crypto.randomBytes(16).toString("hex");
+
 
 const getItem = () => {
     return fs.readFile("db/db.json", "utf8")
 }
 
 
-
+// allows routes to pull from express 
 module.exports = function (app) {
+    // getting current database items
     app.get("/api/notes", async (req, res) => {
+        // read the database
         const items = await getItem()
+        // 
         res.json(JSON.parse(items))
 
     });
+    // Posts new note onto db and html
     app.post("/api/notes", async (req, res) => {
+        // reads the current db
         let db = await getItem()
+        // makes an object
         db = JSON.parse(db)
+        // new note becomes the info taken in from the user
         const newNote = req.body
-        req.body.id = db.length + 1
+        // adds 1 to the new items id
+        req.body.id = id
+        // pushes note into the database
         db.push(newNote)
+        // re-writes the database into the database file
         fs.writeFile("db/db.json", JSON.stringify(db))
+        // makes sure db is current
         console.log({ db })
+        // sends the re-written db to the page
         res.send(db)
 
 
 
     })
 
-    app.delete("/api/notes/:id", function (req, res) {
+    // app.delete("/api/notes/:id", function (req, res) {
 
-
-    })
-
-
-
-    // app.post("/api/notes/:id", async (req, res) => {
+    //     // read the file
     //     let db = await getItem()
     //     db = JSON.parse(db)
-    //     let editDb = db.filter(element => element.id !== req.params.id)
-    //     fs.writeFile("db/db.json", JSON.stringify(editDb))
-    //     console.log({ editDb })
-    //     res.send(editDb)
+    //     // delete the object via id
+    //     const editedDb = 
+    //     // push to file
+    //     //write file 
 
-})
+
+    // })
+
+
+    // this will delete the app 
+    app.delete("/api/notes/:id", async (req, res) => {
+        //reads current database
+        let db = await getItem()
+        // makes the array into an object
+        db = JSON.parse(db)
+        // set id to the paramater to be deleted
+        let delItem = req.params.id
+        // filters and deletes item by delItem 
+        let editDb = db.filter(element => element.id !== delItem)
+        console.log(editDb, "this is the new db")
+        // rewrites database file
+        fs.writeFile("db/db.json", JSON.stringify(editDb))
+        // console logs new database
+        // sends info to the page to display 
+        res.send(editDb)
+
+    })
 }
 
