@@ -1,76 +1,71 @@
-# Unit 11 Express Homework: Note Taker
 
-## Description
+# Badges
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ErikDono/NoteTaker)
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+![GitHub last commit](https://img.shields.io/github/last-commit/ErikDono/NoteTaker)
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+![GitHub followers](https://img.shields.io/github/followers/ErikDono?style=social)
 
-* The following HTML routes should be created:
 
-  * GET `/notes` - Should return the `notes.html` file.
+# Read_Me_Generator 
 
-  * GET `*` - Should return the `index.html` file
+      This is a profile creator page for employers, that allows a manager to originize his personel files into one page! 
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+## Table of Contents:
+* [Node-JS and My Thought Process](#Node-JS-and-My-Thought-Process)
+* [Function Video](#Function-Video)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Tests Used](#Tests-Used)
+* [Contribution](#Contribution)
+* [Bugs](#Bugs)
+* [Future Deploys](#Future-Deploys)
+* [GitHub Info](#GitHub-Info)
 
-* The following API routes should be created:
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
 
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+## Node JS and My Thought Process 
+```
+    This note taking webpage application was a very big challenge, and I am happy to have completed it! I strive to make code as clean looking as possible, and this homework gave me the opportunity to do so. I struggled at first, but with the help of my tutor and in class instructors, combined with the skilled eye of Greg the learning assistant, I was able to fix the necessary bits that were causing a bit of a bumpy ride. My code has two routes: one for the main html page, and the other for the notes page. Express was used, which allowed me to get, post, and delete the user’s generated text information. The app is very straightforward, and the code should logically flow with the user’s intent. 
+```
 
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
-## User Story
 
-AS A user, I want to be able to write and save notes
+## Function Video 
 
-I WANT to be able to delete notes I've written before
+![FunctionVideo](/Assets/function.gif)
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+## Installation
+      This  uses Express and Fs, but you should just be able to run NPM Install 
 
-## Business Context
+## Usage
+     Any type of user can go onto the page, and type whatever kind of note they'd like to save. Once you click, it should appear again for you to copy and paste! 
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+## License:
+      1.0.0 
 
-## Acceptance Criteria
+## Tests Used:
+      None
 
-Application should allow users to create and save notes.
+## Contribution:
+      Feel free to email me, and ask for permission. 
 
-Application should allow users to view previously saved notes.
+## Bugs:
+      None
 
-Application should allow users to delete previously saved notes.
+## Future Deploys:
+      Future changes to the CSS and HTML
+      
 
-- - -
 
-## Commit Early and Often
+## Git Hub Info:
+### Name
+  :feelsgood:  ErikDono
+### Picture:
+![GitHubAvatar](https://avatars2.githubusercontent.com/u/61159557?v=4) 
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+### Email:
+      erik.dono@gmail.com 
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+        
